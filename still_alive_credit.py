@@ -55,7 +55,11 @@ enable_sound = '--no-sound' not in sys.argv
 
 enable_stay = '--no-stay' not in sys.argv
 if enable_sound:
-    import playsound
+    try:
+        import playsound
+    except ModuleNotFoundError:
+        print('playsound module not found; continuing without sound')
+        enable_sound = False
 
 term_columns, term_lines = 0, 0
 if is_vt:
