@@ -1,85 +1,48 @@
-在终端上演示《传送门》片尾曲效果的 Python 脚本程序。
+Python-скрипт, демонстрирующий в терминале титровую песню из игры «Portal».
 
-## 使用条件
+## Требования
 
-`still_alive_credit.py` 脚本使用 Python 3，以下提到的 `pip` 多数情况下对应 `pip3` 命令
-以调用 Python 3 的 `pip` 组件。
+Скрипт `still_alive_credit.py` написан на Python 3, поэтому во всех командах следует
+использовать `pip3` для установки зависимостей.
 
-Windows 下需要使用 Windows terminal，MinTTY 等支持 ANSI 终端转义序列的终端模拟器。
+В Windows необходим эмулятор терминала с поддержкой ANSI-последовательностей,
+например Windows Terminal, MinTTY, Cmder или ConEmu.
 
-为了播放音乐，需要用 `pip` 安装 `playsound`。`playground` 在 Linux 下依赖 
-`python-gobject` 软件包（Ubuntu 已默认安装）。在 MacOS 下还需要用 `pip` 安装 `PyObjC`。
+Для воспроизведения музыки установите пакет `playsound` через `pip`. В Linux он
+зависит от `python-gobject` (в Ubuntu обычно установлен). На macOS требуется
+дополнительно установить `PyObjC` через `pip`.
 
-## 使用方法
+## Использование
 
-在当前目录下执行：
-
-```
-python3 still_alive_credit.py
-```
-
-脚本会读取 `TERM`，`COLUMNS` 和 `LINES` 环境变量来调整输出区域大小并决定是否启用终端颜色等
-特性。如果希望在一台标准 VT100 终端上演示，应该运行：
-
-```
-TERM=vt100 python3 still_alive_credit.py
-```
-
-可以使用`--no-stay`参数使得播放完音乐后自动退出，默认是停留在播放完的界面。你也可以按`Ctrl+C`退出
-
-可以使用 `--no-sound` 参数不带音乐进行演示，此时脚本只依赖 Python 标准库：
-
-```
-python3 still_alive_credit.py --no-sound
-```
-
----
-
-A demo of the credit song 'Still Alive' of Portal 1 written in Python, running
-in text terminal.
-
-## Dependency
-
-`still_alive_credit.py` is written with Python 3. In most cases the following
-`pip` should be `pip3` command.
-
-In Windows system, you need a teminal emulator supporting ANSI escape sequences
-like Windows Terminal, MinTTY, Cmder or ConEmu。
-
-For playing music, you need install `playsound` with `pip`. In Linux `playsound`
-depends on `python-gobject` (default installed in Ubuntu). In MacOS you also need
-to use `pip` to install `PyObjC`.
-
-## Usage
-
-In current directory, execute:
+Выполните в текущей директории:
 
 ```
 python3 still_alive_credit.py
 ```
 
-The script will read environment variable `TERM`, `COLUMNS` and `LINES` to determine
-the output area size and whether to enable features such as terminal color. If you
-want run it on a standard VT100 terminal, you should execute:
+Скрипт считывает переменные окружения `TERM`, `COLUMNS` и `LINES`, чтобы подобрать
+размер области вывода и решить, активировать ли цветной вывод и другие возможности.
+Если нужно запустить программу на стандартном терминале VT100, выполните:
 
 ```
 TERM=vt100 python3 still_alive_credit.py
 ```
 
-You can use the `--no-stay` option to automatically exit after the music finishes playing. By default, it remains on the playback screen. You can also press `Ctrl+C` to exit.
+Опция `--no-stay` завершит программу сразу после окончания музыки. По умолчанию
+экран остаётся, также можно выйти сочетанием `Ctrl+C`.
 
-It's able to use `--no-sound` option to run the script without playing sound. In this
-case, the script only depends on Python standard library:
+Опция `--no-sound` позволяет запустить демонстрацию без музыки, тогда требуется
+только стандартная библиотека Python:
 
 ```
 python3 still_alive_credit.py --no-sound
 ```
 
-## Linux 运行效果 / Snapshot on Linux
+## Снимок экрана в Linux
 
 ![](still_alive_linux.jpg)
 
-## 演示视频 / demonstration video
+## Демонстрационное видео
 
 ![](still_alive_informer213.jpg)
 
